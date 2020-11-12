@@ -340,3 +340,5 @@ ASALocalRun/
 healthchecksdb
 *.flp
 *.bin
+OperatingSystem.vcxproj
+OperatingSystem.vcxproj.filters
