@@ -21,11 +21,11 @@ DetectLongMode:
 	mov eax, 0x80000001
 	cpuid
 	test edx , 1<<29
-	jz
+	jz NoLongMode
 	ret
 
 NoLongMode:
-	
+	hlt ; No Long Mode support.
 
 NoCPUID:
 	hlt ;No CPUID support.s
