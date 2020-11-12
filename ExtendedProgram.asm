@@ -5,6 +5,7 @@ jmp EnterProtectedMode
 %include "print.asm"
 %include "gdt.asm"
 %include "CPUID.asm"
+%include "SimplePaging.asm"
 
 EnterProtectedMode:
 	call EnableA20
@@ -46,5 +47,6 @@ StartProtectedMode:
 	mov [0xb8018], byte ' '
 	call DetectCPUID
 	call DetectLongMode
+	call SetUpIdentityPaging
 	jmp $
 times 2048-($-$$) db 0
